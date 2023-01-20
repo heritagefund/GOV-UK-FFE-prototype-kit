@@ -1,6 +1,6 @@
 # GOV-UK-FFE-prototype-kit
-FFE portotyping tool that implemets the GOV UK GDS design kit, allowing for rapid design prototyping. This tool has not yet been developed to implement any of the NLHF specific design content (such as custom headers/footers). 
-However, the NLHF implements standard GOV UK components which can provide rapid page protypes within this tool, taken directly from the GDS component examples. 
+This is a FFE portotyping tool that implemets the GOV UK GDS design kit, allowing for rapid design prototyping. This tool has not yet been developed to implement any of the NLHF specific design content (such as custom headers/footers). 
+However, the NLHF implements standard GOV UK components that can be taken directly from the GDS component examples. 
 
 
 
