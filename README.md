@@ -2,6 +2,16 @@
 This is a FFE portotyping tool that implemets the GOV UK GDS design kit, allowing for rapid design prototyping. This tool has not yet been developed to implement any of the NLHF specific design content (such as custom headers/footers). 
 However, the NLHF implements standard GOV UK components that can be taken directly from the GDS component examples. 
 
+To get the prototype up and running clone down the repo, in the root of the repo run: 
+
+- `npm insatll` to insatll all the node dependencies 
+
+then 
+
+- `npm dev run` to run the server on the localhost:3000
+
+Once the server is running navigate to [http://localhost:3000/manage-prototype](http://localhost:3000/manage-prototype), to begin creating new pages from the in browser template creator, or view the prototype with 'Go to prototype', whick will take you to the root of site. 
+
 
 
 # GOV.UK Prototype Kit - From GDS 
