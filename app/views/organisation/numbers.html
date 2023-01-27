@@ -1,0 +1,60 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        About your organisation
+      </h1>
+
+      <form class="form" action="/organisation/mission" method="post">
+
+        <p class="govuk-hint">
+          If you have a company number, related to this project, it would be helpful if you provide it.
+        </p>
+
+        {% from "govuk/components/input/macro.njk" import govukInput %}
+        {{ govukInput({
+          label: {
+            text: "What is your company number?",
+            classes: "govuk-label--m",
+            isPageHeading: false
+          },
+          id: "event-name",
+          name: "event-name"
+        }) }}
+
+        <p class="govuk-hint">
+          If you have a charity number, related to this project, it would be helpful if you provide it.
+        </p>
+
+        {% from "govuk/components/input/macro.njk" import govukInput %}
+        {{ govukInput({
+          label: {
+            text: "What is your company number?",
+            classes: "govuk-label--m",
+            isPageHeading: false
+          },
+          id: "event-name",
+          name: "event-name"
+        }) }}
+
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+  
+    </div>
+  </div>
+
+{% endblock %}

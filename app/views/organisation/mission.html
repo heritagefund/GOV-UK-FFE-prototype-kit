@@ -1,0 +1,75 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+      <span class="govuk-caption-xl">
+        About your organisation
+      </span>
+
+      <form class="form" action="/organisation/summary" method="post">
+
+        {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+        {{ govukCheckboxes({
+          name: "waste",
+          fieldset: {
+            legend: {
+              text: "Tell us about the mission, or objectives, of your organisation",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          hint: {
+            text: "Select all that apply."
+          },
+          items: [
+            {
+              value: "Black or minority ethnic led",
+              text: "Black or minority ethnic led"
+            },
+            {
+              value: "Disability led",
+              text: "Disability led"
+            },
+            {
+              value: "LGBT+ led",
+              text: "LGBT+ led"
+            },
+            {
+              value: "Female led",
+              text: "Female led"
+            },
+            {
+              value: "Young people led",
+              text: "Young people led"
+            },
+            {
+              value: "Mainly led by people from Catholic communities",
+              text: "Mainly led by people from Catholic communities"
+            },
+            {
+              value: "Mainly led by people from Protestant communities",
+              text: "Mainly led by people from Protestant communities"
+            }
+          ]
+        }) }}
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+  
+    </div>
+  </div>
+
+{% endblock %}

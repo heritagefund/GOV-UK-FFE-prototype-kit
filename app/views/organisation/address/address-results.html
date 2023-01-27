@@ -1,0 +1,66 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <span class="govuk-caption-xl">
+        About your organisation
+      </span>
+
+      <h1 class="govuk-heading-l">
+        Select an address
+      </h1>
+
+      <form class="form" action="/organisation/address/address-details" method="post">
+
+        <p class="govuk-hint">
+          Your organisation must be based in the UK
+        </p>
+  
+
+        {% from "govuk/components/select/macro.njk" import govukSelect %}
+        {{ govukSelect({
+          id: "address",
+          name: "address",
+          label: {
+            text: ""
+          },
+          items: [
+            {
+              value: "address1",
+              text: "1 First Drive"
+            },
+            {
+              value: "address2",
+              text: "2 First Drive",
+              selected: true
+            },
+            {
+              value: "address3",
+              text: "3 First Drive"
+            },
+            {
+              value: "address4",
+              text: "4 First Drive"
+            }
+          ]
+        }) }}
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+  
+    </div>
+  </div>
+
+{% endblock %}

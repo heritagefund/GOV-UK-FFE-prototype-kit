@@ -1,0 +1,89 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        About your organisation
+      </h1>
+
+
+      <form class="form" action="/organisation/numbers" method="post">
+
+        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+        {{ govukRadios({
+          name: "where-do-you-live",
+          fieldset: {
+            legend: {
+              text: " What type of organisation will be running your project?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          items: [
+            {
+              value: "Registered charity",
+              text: "Registered charity"
+            },
+            {
+              value: "Local authority",
+              text: "Local authority"
+            },
+            {
+              value: "Other public sector organisation",
+              text: "Other public sector organisation"
+            },
+            {
+              value: "Registered company",
+              text: "Registered company"
+            },
+            {
+              value: "Community Interest Company",
+              text: "Community Interest Company"
+            },
+            {
+              value: "Faith-based organisation",
+              text: "Faith-based organisation"
+            },
+            {
+              value: "Church organisation",
+              text: "Church organisation"
+            },
+            {
+              value: "Community group",
+              text: "Community group"
+            },
+            {
+              value: "Voluntary group",
+              text: "Voluntary group"
+            },
+            {
+              value: "Individual private owner of heritage",
+              text: "Individual private owner of heritage"
+            },
+            {
+              value: "Other",
+              text: "Northern Ireland"
+            }
+          ]
+        }) }}
+
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+  
+    </div>
+  </div>
+
+{% endblock %}
