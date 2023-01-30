@@ -18,32 +18,48 @@
       </span>
 
       <h1 class="govuk-heading-l">
-        Find your address
+        Select an address
       </h1>
 
-      <form class="form" action="/organisation/address/address-results" method="post">
+      <form class="form" action="/organisation/address-not-found/address-details" method="post">
 
         <p class="govuk-hint">
           Your organisation must be based in the UK
         </p>
   
 
-        {% from "govuk/components/input/macro.njk" import govukInput %}
-        {{ govukInput({
+        {% from "govuk/components/select/macro.njk" import govukSelect %}
+        {{ govukSelect({
+          id: "address",
+          name: "address",
           label: {
-            text: "Postcode",
-            classes: "govuk-label--s",
-            isPageHeading: false
+            text: ""
           },
-          id: "event-name",
-          name: "event-name"
+          items: [
+            {
+              value: "address1",
+              text: "1 First Drive"
+            },
+            {
+              value: "address2",
+              text: "2 First Drive",
+              selected: true
+            },
+            {
+              value: "address3",
+              text: "3 First Drive"
+            },
+            {
+              value: "address4",
+              text: "4 First Drive"
+            }
+          ]
         }) }}
 
         <button class="govuk-button" data-module="govuk-button">Continue</button>
 
       </form>
   
-
     </div>
   </div>
 

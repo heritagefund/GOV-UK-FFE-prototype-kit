@@ -1,0 +1,50 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <span class="govuk-caption-xl">
+        About your organisation
+      </span>
+
+      <h1 class="govuk-heading-l">
+        Find your address
+      </h1>
+
+      <form class="form" action="/organisation/address-not-found/address-results" method="post">
+
+        <p class="govuk-hint">
+          Your organisation must be based in the UK
+        </p>
+  
+
+        {% from "govuk/components/input/macro.njk" import govukInput %}
+        {{ govukInput({
+          label: {
+            text: "Postcode",
+            classes: "govuk-label--s",
+            isPageHeading: false
+          },
+          id: "event-name",
+          name: "event-name"
+        }) }}
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+  
+
+    </div>
+  </div>
+
+{% endblock %}
