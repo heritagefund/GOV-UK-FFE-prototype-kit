@@ -1,0 +1,120 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <span class="govuk-caption-xl">
+        About your organisation
+      </span>
+
+      <h1 class="govuk-heading-l">
+        Enter your organisation address details
+      </h1>
+
+      <form class="form" action="/start-an-application" method="post">
+
+        <p class="govuk-hint">
+          Your organisation must be based in the UK
+        </p>
+
+        <p class="govuk-hint">
+          This must be the same as your organisation's bank account. It must also be the same as your governing document unless you are a public body. If the name is not the same your organisation may not be able to receive funding from us.
+        </p>
+  
+        {% from "govuk/components/input/macro.njk" import govukInput %}
+        {{ govukInput({
+          label: {
+            text: "Organisation name",
+            classes: "govuk-label--s",
+            isPageHeading: false
+          },
+          id: "event-name",
+          name: "event-name"
+        }) }}
+
+        {% from "govuk/components/input/macro.njk" import govukInput %}
+        {{ govukInput({
+          label: {
+            text: "Address line 1",
+            classes: "govuk-label--s",
+            isPageHeading: false
+          },
+          id: "event-name",
+          name: "event-name"
+        }) }}
+
+        {% from "govuk/components/input/macro.njk" import govukInput %}
+        {{ govukInput({
+          label: {
+            text: "Address line 2",
+            classes: "govuk-label--s",
+            isPageHeading: false
+          },
+          id: "event-name",
+          name: "event-name"
+        }) }}
+
+        {% from "govuk/components/input/macro.njk" import govukInput %}
+        {{ govukInput({
+          label: {
+            text: "Address line 3",
+            classes: "govuk-label--s",
+            isPageHeading: false
+          },
+          id: "event-name",
+          name: "event-name"
+        }) }}
+
+        {% from "govuk/components/input/macro.njk" import govukInput %}
+        {{ govukInput({
+          label: {
+            text: "Town",
+            classes: "govuk-label--s",
+            isPageHeading: false
+          },
+          id: "event-name",
+          name: "event-name"
+        }) }}
+
+        {% from "govuk/components/input/macro.njk" import govukInput %}
+        {{ govukInput({
+          label: {
+            text: "County",
+            classes: "govuk-label--s",
+            isPageHeading: false
+          },
+          id: "event-name",
+          name: "event-name"
+        }) }}
+
+        {% from "govuk/components/input/macro.njk" import govukInput %}
+        {{ govukInput({
+          label: {
+            text: "Postcode",
+            classes: "govuk-label--s",
+            isPageHeading: false
+          },
+          id: "event-name",
+          name: "event-name"
+        }) }}
+
+
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+  
+    </div>
+  </div>
+
+{% endblock %}
